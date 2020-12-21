@@ -97,7 +97,10 @@ router.post("/refresh", async (req, res) => {
       req.headers["refresh_token"];
 
     if (accessToken && refreshToken) {
-      let decodedAccess = await TokenService.checkAccessToken(accessToken);
+      let decodedAccess = await TokenService.checkAccessToken(
+        accessToken,
+        true
+      );
 
       const refreshTokens = await UserToken.find({ userId: decodedAccess.id });
 

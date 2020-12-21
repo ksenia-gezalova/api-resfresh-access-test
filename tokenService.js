@@ -30,8 +30,12 @@ class tokenService {
     return jwt.verify(token, refreshTokenKey);
   }
 
-  async checkAccessToken(token) {
-    return jwt.verify(token, tokenKey);
+  async checkAccessToken(token, flag = false) {
+    let options;
+    if (flag) {
+      options = { ignoreExpiration: true };
+    }
+    return jwt.verify(token, tokenKey, options);
   }
 }
 
