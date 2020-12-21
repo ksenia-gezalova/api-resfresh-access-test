@@ -1,4 +1,4 @@
-# noter-api
+# api-resfresh-access-test
 Api for noter app based on Node.js, Express.js, MySql and Redis.
 
 ## Project setup
